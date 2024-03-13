@@ -16,5 +16,7 @@ public class Nstar {
             }
             System.out.println();
         }
+        keyboard.close();
+        System.exit(0);
     }
 }
