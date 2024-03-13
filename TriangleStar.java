@@ -16,5 +16,6 @@ public class TriangleStar {
             }
             System.out.println();
         }
+        scanner.close();
     }
 }
