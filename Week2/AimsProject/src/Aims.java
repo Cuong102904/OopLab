@@ -10,6 +10,12 @@ public class Aims {
         // anOrder.addDigitalVideoDisc(dvd3);
         anOrder.addDigitalVideoDisc(new DigitalVideoDisc[] { dvd1, dvd2, dvd3 });
         anOrder.removeDIgitalVideoDisc(dvd3);
-        System.out.println("Total Cost is: " + anOrder.totalCost());
+
+        System.out.println(String.format("%-5s %-15s %s", dvd1.getId(), dvd1.getTitle(), dvd1.getCost()));
+        System.out.println(String.format("%-5s %-15s %s", dvd2.getId(), dvd2.getTitle(), dvd2.getCost()));
+        System.out.println(String.format("%-5s %-15s %s", dvd3.getId(), dvd3.getTitle(), dvd3.getCost()));
+
+        System.out.println(String.format("%-5s %-15s %s", "", "Total", anOrder.totalCost()));
+
     }
 }
