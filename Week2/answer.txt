@@ -1,0 +1,15 @@
+Q: If you create a constructor method to build a DVD by title then create a constructor method to build a DVD by category. Does JAVA allow you to do this?
+A: No, it doesn't. Because both category and title are String so both constructors have the same signature and that is not allowed in Java.
+
+Q: Try to add a method addDigitalVideoDisc which allows to pass an arbitrary number of arguments for dvd. Compared to an array parameter. What do you prefer in this case?
+A: I would like to use passing an array because it is not limited to a number of items.
+
+Q: Is JAVA a Pass by Value or a Pass by Reference programming language?
+A: Java is Pass by Value.
+
+Q: After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
+A: Because the Object o1 and Object o2 is just copies of jungleDVD and cinderellaDVD, so we are swapping o1 and o2 not jungleDVD and cinderellaDVD.
+
+Q: After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
+A: Because dvd is the copy of jungleDVD, so it points to the same memory address as jungleDVD (like it's two pointer point to the same object). So when we call dvd.setTitle(),
+the title will be changed.
