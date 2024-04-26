@@ -33,7 +33,6 @@ public class track implements Playable {
 
     @Override
     public void play() {
-        // TODO Auto-generated method stub
         System.out.println("Track title: " + this.getTitle());
         System.out.println("Track lenght: " + this.getLength());
     }
