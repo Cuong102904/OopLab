@@ -1,4 +1,5 @@
 package hust.soict.globalict.aims.disc;
+
 public class DigitalVideoDisc {
     private String title;
     private String category;
@@ -36,6 +37,7 @@ public class DigitalVideoDisc {
         this.category = category;
         this.cost = cost;
         this.director = director;
+        this.length = length;
         id = nbDigitalVideoDiscs;
         nbDigitalVideoDiscs++;
     }
@@ -67,6 +69,11 @@ public class DigitalVideoDisc {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public boolean isMatch(String title) {
+        return this.title.equalsIgnoreCase(title);
+    }
+
     public String toString() {
         return title + " - " + category + " - " + director + " - " + length;
     }
