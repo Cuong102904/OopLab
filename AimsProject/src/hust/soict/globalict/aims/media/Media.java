@@ -45,6 +45,7 @@ public abstract class Media {
         this.cost = cost;
     }
 
+    @Override
     public boolean equals(Object obj) {
 
         if (obj instanceof Media) {
