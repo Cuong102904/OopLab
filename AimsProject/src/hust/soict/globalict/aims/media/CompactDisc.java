@@ -56,7 +56,6 @@ public class CompactDisc extends Disc implements Playable {
 
     @Override
     public void play() {
-        // TODO Auto-generated method stub
         for (track track : tracks) {
             track.play();
         }
