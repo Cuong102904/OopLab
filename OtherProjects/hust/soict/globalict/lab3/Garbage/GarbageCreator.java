@@ -1,10 +1,10 @@
-package OtherProjects.hust.soict.globalict.lab3;
+package OtherProjects.hust.soict.globalict.lab3.Garbage;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class NoGarbage {
+public class GarbageCreator {
     public static void main(String[] args) {
         String filename = "OtherProjects/hust/soict/globalict/lab3/test.txt";
         byte[] inputBytes = { 0 };
@@ -17,12 +17,11 @@ public class NoGarbage {
         }
 
         startTime = System.currentTimeMillis();
-        StringBuilder outputSB = new StringBuilder();
+        String outpString = "";
         for (byte b : inputBytes) {
-            outputSB.append((char) b);
+            outpString += (char) b;
         }
         endTime = System.currentTimeMillis();
-        System.out.println("Time taken by StringBuilder: " + (endTime - startTime) + "ms");
+        System.out.println("Time taken by String concatenation: " + (endTime - startTime) + "ms");
     }
-
 }

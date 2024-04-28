@@ -1,5 +1,5 @@
 
-package hust.soict.globalict.aims.cart;
+package hust.soict.globalict.test.cart;
 
 import hust.soict.globalict.aims.disc.DigitalVideoDisc;
 import hust.soict.globalict.aims.media.Book;
