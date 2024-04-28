@@ -2,7 +2,7 @@
 
 **A**: If attempting to cast an object to a class that it is not an instance of, or if the class it is cast to does not have the appropriate method, Java will throw a `ClassCastException` at runtime.
 
-**Question**: Alternatively, to compare items in the cart, instead of using the Comparator class I have mentioned, you can use the Comparable interface1 and override the `compareTo()`method. You can refer to the Java docs to see the information of this interface.
+**Question**: Alternatively, to compare items in the cart, instead of using the Comparator class I have mentioned, you can use the Comparable interface and override the `compareTo()`method. You can refer to the Java docs to see the information of this interface.
 Suppose we are taking this `Comparable` interface approach.
 
 1. What class should implement the Comparable interface?
