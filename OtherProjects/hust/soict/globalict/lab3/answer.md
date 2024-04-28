@@ -26,6 +26,6 @@ Suppose we are taking this `Comparable` interface approach.
 
 3. Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
    - No, the `Comparable` interface allows defining only one natural ordering for objects. If we need multiple ordering rules, we should use a `Comparator` for each rule or define a single rule in the `compareTo()` method that encompasses all the desired ordering criteria.
-4. Suppose the DVDs have a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+4. Suppose the DVDs have a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this ?
    - Implement the `Comparable<DigitalVideoDisc>` method in the `DigitalVideoDisc` class.
    - Override the `compareTo()` method to define the specific ordering rule for DVDs.
