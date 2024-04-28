@@ -1,4 +1,5 @@
 **Q:** When overriding the equals() method of the Object class, you will have to cast the Object parameter obj to the type of Object that you are dealing with. For example, in the Media class, you must cast the Object obj to a Media, and then check the equality of the two objects’ attributes as the above requirements (i.e. title for Media; title and length for Track). If the passing object is not an instance of Media, what happens?
+
 **A**: If attempting to cast an object to a class that it is not an instance of, or if the class it is cast to does not have the appropriate method, Java will throw a `ClassCastException` at runtime.
 
 **Question**: Alternatively, to compare items in the cart, instead of using the Comparator class I have mentioned, you can use the Comparable interface1 and override the `compareTo()`method. You can refer to the Java docs to see the information of this interface.
