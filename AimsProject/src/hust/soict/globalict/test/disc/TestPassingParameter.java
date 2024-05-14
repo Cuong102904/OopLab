@@ -1,4 +1,7 @@
-package hust.soict.globalict.aims.disc;
+package hust.soict.globalict.test.disc;
+
+import hust.soict.globalict.aims.disc.DigitalVideoDisc;
+
 public class TestPassingParameter {
     public static void main(String[] args) {
         DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
