@@ -1,64 +1,61 @@
 package hust.soict.globalict.aims.media;
 
-import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 
 public abstract class Media {
-    protected int id;
-    protected String title;
-    protected String category;
-    protected float cost;
-    List<Media> mediae = new ArrayList<Media>();
-    public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
-    public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
+    private int id;
+    private String title;
+    private String category;
+    private float cost;
 
-    public int getId() {
+    public Media(String title, String category, float cost) {
+        this.title = title;
+        this.category = category;
+        this.cost = cost;
+    }
+
+    public Media(String title) {
+        this.title = title;
+    }
+
+    public int getID() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setID(int id) {
         this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
     }
 
     public void setTitle(String title) {
         this.title = title;
     }
 
-    public String getCategory() {
-        return category;
+    public String getTitle() {
+        return title;
     }
 
     public void setCategory(String category) {
         this.category = category;
     }
 
-    public float getCost() {
-        return cost;
+    public String getCategory() {
+        return category;
     }
 
     public void setCost(float cost) {
         this.cost = cost;
     }
 
+    public float getCost() {
+        return cost;
+    }
+
     @Override
-    public boolean equals(Object obj) {
-
-        if (obj instanceof Media) {
-            Media media = (Media) obj;
-            return media.getTitle() == this.getTitle();
-        } else {
-            return false;
-        }
-
+    public boolean equals(Object o) {
+        Media media = (Media) o;
+        return title == media.getTitle();
     }
 
-    public String toString() {
-        return this.getId() + ". " + this.getTitle() + " - " + this.getCategory() + " - " + this.getCost();
-    }
-
+    public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
+    public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
 }
