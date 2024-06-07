@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.soict.globalict.javafx.PainterController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.soict.globalict.javafx.PaintController">
    <opaqueInsets>
       <Insets />
    </opaqueInsets>
@@ -24,18 +24,18 @@
             <Insets right="8.0" />
          </BorderPane.margin>
          <children>
-            <TitledPane animated="false" prefHeight="69.0" prefWidth="62.0" text="Tools">
+            <TitledPane animated="false" prefHeight="74.0" prefWidth="99.0" text="Tools">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="58.0" prefWidth="78.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="54.0" prefWidth="113.0">
                      <children>
-                        <VBox prefHeight="68.0" prefWidth="53.0">
+                        <VBox prefHeight="65.0" prefWidth="85.0">
                            <children>
-                              <RadioButton fx:id="penRadioButton" lineSpacing="10.0" mnemonicParsing="false" text="Pen">
+                              <RadioButton fx:id="penRadioButton" lineSpacing="10.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="82.0" text="Pen">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="toolToggleGroup" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="eraserRadioButton" lineSpacing="10.0" mnemonicParsing="false" text="Eraser" toggleGroup="{toolToggleGroup}" />
+                              <RadioButton fx:id="eraserRadioButton" lineSpacing="10.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="79.0" text="Eraser" toggleGroup="$toolToggleGroup" />
                            </children>
                         </VBox>
                      </children>
@@ -51,6 +51,6 @@
       </VBox>
    </left>
    <center>
-      <Pane fx:id="drawingAreaPane" onMouseDragged="#drawingAreaMouseDragged" onMousePressed="#drawingAreaMouseDragged" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
+      <Pane fx:id="drawingAreaPane" onMouseDragged="#drawingAreaMouseDragged" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

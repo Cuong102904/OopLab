@@ -1,3 +1,4 @@
+package hust.soict.globalict.javafx;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
