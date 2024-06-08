@@ -6,12 +6,15 @@ import hust.soict.globalict.aims.media.Media;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 
@@ -50,6 +53,17 @@ public class CartController {
     private TableView<Media> tblMedia;
 
     @FXML
+    private TextField tfFilter;
+
+    @FXML
+    private RadioButton radioBtnFilterId;
+
+    @FXML
+    private RadioButton radioBtnFilterTitle;
+
+    private FilteredList<Media> filteredData;
+
+    @FXML
     public void initialize() {
         colMediaID.setCellValueFactory(new PropertyValueFactory<Media, Integer>("id"));
         colMediaTitle.setCellValueFactory(new PropertyValueFactory<Media, String>("title"));
@@ -70,20 +84,46 @@ public class CartController {
                 updateButtonBar(newValue);
             }
         });
+
+        tfFilter.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                showFilteredMedia(newValue);
+            }
+        });
+
     }
 
     void updateButtonBar(Media media) {
-        if (media == null) {
+        if (media != null) {
+            btnPlay.setVisible(true);
+            btnRemove.setVisible(true);
+
+            // If the media is a playable type, enable the play button
+            if (media instanceof Playable) {
+                btnPlay.setDisable(false);
+            } else {
+                btnPlay.setDisable(true);
+            }
+        } else {
             btnPlay.setVisible(false);
             btnRemove.setVisible(false);
-        } else {
-            btnRemove.setVisible(true);
-            if (media instanceof Playable) {
-                btnPlay.setVisible(true);
-            } else {
-                btnPlay.setVisible(false);
-            }
         }
+    }
+
+    private void showFilteredMedia(String filter) {
+        filteredData.setPredicate(media -> {
+            if (filter == null || filter.isEmpty()) {
+                return true;
+            }
+            String lowerCaseFilter = filter.toLowerCase();
+            if (radioBtnFilterId.isSelected()) {
+                return String.valueOf(media.getID()).contains(lowerCaseFilter);
+            } else if (radioBtnFilterTitle.isSelected()) {
+                return media.getTitle().toLowerCase().contains(lowerCaseFilter);
+            }
+            return false;
+        });
     }
 
     @FXML
