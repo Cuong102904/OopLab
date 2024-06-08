@@ -1,16 +1,20 @@
 package hust.soict.globalict.aims.cart;
 
-import java.util.ArrayList;
-import java.util.List;
+//import java.util.ArrayList;
+//import java.util.List;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import hust.soict.globalict.aims.media.Media;
 
 import hust.soict.globalict.aims.disc.DigitalVideoDisc;
-import hust.soict.globalict.aims.media.Media;
 
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
-    private List<Media> itemsOrdered = new ArrayList<>();
+    // private List<Media> itemsOrdered = new ArrayList<>();
+    private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 
-    public List<Media> getItemsOrdered() {
+    public ObservableList<Media> getItemsOrdered() {
         return itemsOrdered;
     }
 

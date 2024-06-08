@@ -106,4 +106,12 @@ public class StoreManagerScreen extends JFrame {
             new StoreManagerScreen(storeTest);
         });
     }
+
+    public class ViewStoreController {
+        private Store store;
+
+        public ViewStoreController(Store store) {
+            this.store = store;
+        }
+    }
 }

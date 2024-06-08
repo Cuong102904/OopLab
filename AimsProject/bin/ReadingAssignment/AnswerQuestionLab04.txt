@@ -1,0 +1,17 @@
+1. Top-Level Containers:
+
+AWT: Uses native system windowing components. Common top-level containers include Frame, Dialog, and Applet.
+Swing: Provides lightweight components that are not dependent on the native system. It includes JFrame, JDialog, and JApplet which offer more features and flexibility compared to their AWT counterparts.
+
+2. Class Names of Components:
+
+AWT: Component classes are named directly (e.g., Button, Checkbox, TextField).
+Swing: Swing components are prefixed with ‘J’ to distinguish them from AWT (e.g., JButton, JCheckbox, JTextField). This naming also indicates that they are part of the Swing library, which provides more features and customization options.
+
+3. Event Handling:
+
+AWT: Uses event listeners that can be heavier on system resources since they are tied closely with the OS’s event model.
+Swing: Utilizes a more flexible and lighter event model which can handle complex interactions better. Swing also allows more extensive event handling through its own mechanisms and can work uniformly across all platforms.
+Appearance Differences:
+
+Applications developed using Swing can have a consistent look across all platforms due to its lightweight nature, whereas AWT relies on the native system's appearance, which can vary significantly between different systems.
