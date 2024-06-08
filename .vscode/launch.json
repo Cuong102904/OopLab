@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Aims",
+            "request": "launch",
+            "mainClass": "hust.soict.globalict.aims.Aims",
+            "projectName": "OopLab_HoangManhCuong_20226018_dd583bab"
+        },
+        {
+            "type": "java",
+            "name": "TestViewStoreScreen",
+            "request": "launch",
+            "mainClass": "hust.soict.globalict.screen.customer.store.TestViewStoreScreen",
+            "projectName": "OopLab_HoangManhCuong_20226018_dd583bab"
+        },
+        {
+            "type": "java",
+            "name": "StoreManagerScreen",
+            "request": "launch",
+            "mainClass": "hust.soict.globalict.screen.manager.StoreManagerScreen",
+            "projectName": "OopLab_HoangManhCuong_20226018_dd583bab"
+        },
+        {
+            "type": "java",
+            "name": "CartTest",
+            "request": "launch",
+            "mainClass": "hust.soict.globalict.test.cart.CartTest",
+            "projectName": "OopLab_HoangManhCuong_20226018_dd583bab"
+        },
+        {
+            "type": "java",
+            "name": "TestPassingParameter",
+            "request": "launch",
+            "mainClass": "hust.soict.globalict.test.disc.TestPassingParameter",
+            "projectName": "OopLab_HoangManhCuong_20226018_dd583bab"
+        },
+        {
+            "type": "java",
+            "name": "StoreTest",
+            "request": "launch",
+            "mainClass": "hust.soict.globalict.test.store.StoreTest",
+            "projectName": "OopLab_HoangManhCuong_20226018_dd583bab"
+        }
+    ]
+}

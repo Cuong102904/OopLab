@@ -1,0 +1,57 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Aims",
+            "request": "launch",
+            "mainClass": "hust.soict.globalict.aims.Aims",
+            "projectName": "AimsProject_a33e86e7"
+        },
+        {
+            "type": "java",
+            "name": "TestViewStoreScreen",
+            "request": "launch",
+            "vmArgs": "--module-path D:/Downloads/openjfx-22.0.1_windows-x64_bin-sdk/javafx-sdk-22.0.1/lib --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "hust.soict.globalict.screen.customer.store.TestViewStoreScreen",
+            "projectName": "AimsProject_a33e86e7"
+        },
+        {
+            "type": "java",
+            "name": "StoreManagerScreen",
+            "request": "launch",
+            "mainClass": "hust.soict.globalict.screen.manager.StoreManagerScreen",
+            "projectName": "AimsProject_a33e86e7"
+        },
+        {
+            "type": "java",
+            "name": "CartTest",
+            "request": "launch",
+            "mainClass": "hust.soict.globalict.test.cart.CartTest",
+            "projectName": "AimsProject_a33e86e7"
+        },
+        {
+            "type": "java",
+            "name": "TestPassingParameter",
+            "request": "launch",
+            "mainClass": "hust.soict.globalict.test.disc.TestPassingParameter",
+            "projectName": "AimsProject_a33e86e7"
+        },
+        {
+            "type": "java",
+            "name": "StoreTest",
+            "request": "launch",
+            "mainClass": "hust.soict.globalict.test.store.StoreTest",
+            "projectName": "AimsProject_a33e86e7"
+        }
+    ]
+}
