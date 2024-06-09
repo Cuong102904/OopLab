@@ -12,6 +12,7 @@ import hust.soict.globalict.aims.disc.Track;
 import hust.soict.globalict.aims.disc.CompactDisc;
 import hust.soict.globalict.aims.store.Store;
 import hust.soict.globalict.aims.media.*;
+import hust.soict.globalict.aims.exception.PlayerException;
 
 public class Aims {
     private static Scanner scanner = new Scanner(System.in);
@@ -98,7 +99,11 @@ public class Aims {
                                         break;
                                     case 2:
                                         if (item instanceof Playable) {
-                                            ((Playable) item).play();
+                                            try {
+                                                ((Playable) item).play();
+                                            } catch (PlayerException e) {
+                                                System.out.println(e.getMessage());
+                                            }
                                         } else {
                                             System.out.println("This media is not playable");
                                         }
@@ -231,7 +236,11 @@ public class Aims {
                     for (var items : cart.getItemsOrdered()) {
                         if (items.getID() == mediaID) {
                             if (items instanceof Playable) {
-                                ((Playable) items).play();
+                                try {
+                                    ((Playable) items).play();
+                                } catch (PlayerException e) {
+                                    System.out.println(e.getMessage());
+                                }
                             } else {
                                 System.out.println("This media is not playable");
                             }
@@ -269,7 +278,11 @@ public class Aims {
         for (var items : store.takeItemsInStore()) {
             if (items.getTitle().equalsIgnoreCase(title)) {
                 if (items instanceof Playable) {
-                    ((Playable) items).play();
+                    try {
+                        ((Playable) items).play();
+                    } catch (PlayerException e) {
+                        System.out.println(e.getMessage());
+                    }
                 } else {
                     System.out.println("The media can't play");
                 }

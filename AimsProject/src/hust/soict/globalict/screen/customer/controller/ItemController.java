@@ -1,15 +1,19 @@
 package hust.soict.globalict.screen.customer.controller;
 
+import hust.soict.globalict.aims.cart.Cart;
 import hust.soict.globalict.aims.disc.Playable;
 import hust.soict.globalict.aims.media.Media;
+import hust.soict.globalict.aims.exception.PlayerException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 
 public class ItemController {
+    private Cart cart = new Cart();
 
     @FXML
     private Button btnAddToCart;
@@ -23,17 +27,37 @@ public class ItemController {
     @FXML
     private Label lblTitle;
 
+    private Media media;
+
     @FXML
     void btnAddToCartClicked(ActionEvent event) {
-
+        try {
+            cart.addMedia(media);
+            Alert successAlert = new Alert(Alert.AlertType.INFORMATION, "Media added successfully!");
+            successAlert.showAndWait();
+        } catch (Exception e) {
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR, e.getMessage());
+            errorAlert.showAndWait();
+            e.printStackTrace();
+        }
     }
 
     @FXML
     void btnPlayClicked(ActionEvent event) {
-
+        try {
+            if (media instanceof Playable) {
+                ((Playable) media).play();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Playing media.");
+                alert.showAndWait();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Media cannot be played.");
+                alert.showAndWait();
+            }
+        } catch (PlayerException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
+            alert.showAndWait();
+        }
     }
-
-    private Media media;
 
     public void setData(Media media) {
         this.media = media;
