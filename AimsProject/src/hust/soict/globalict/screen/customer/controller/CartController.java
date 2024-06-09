@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import hust.soict.globalict.aims.cart.Cart;
 import hust.soict.globalict.aims.disc.Playable;
+import hust.soict.globalict.aims.exception.PlayerException;
 import hust.soict.globalict.aims.media.Media;
 import hust.soict.globalict.aims.store.Store;
 import javafx.beans.value.ChangeListener;
@@ -141,7 +142,11 @@ public class CartController {
         // Add functionality for play button
         Media selectedMedia = tblMedia.getSelectionModel().getSelectedItem();
         if (selectedMedia instanceof Playable) {
-            ((Playable) selectedMedia).play();
+            try {
+                ((Playable) selectedMedia).play();
+            } catch (PlayerException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 
