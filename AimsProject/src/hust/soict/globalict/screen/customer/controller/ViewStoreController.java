@@ -8,8 +8,12 @@ import hust.soict.globalict.aims.store.Store;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class ViewStoreController {
 
@@ -18,7 +22,18 @@ public class ViewStoreController {
 
     @FXML
     void btnViewCartPressed(ActionEvent event) {
-        // Implement the action to view the cart
+        try {
+            final String CART_FXML_FILE_PATH = "/hust/soict/globalict/screen/customer/view/Cart.fxml";
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(CART_FXML_FILE_PATH));
+            fxmlLoader.setController(new CartController(cart, store));
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Cart");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private Cart cart;

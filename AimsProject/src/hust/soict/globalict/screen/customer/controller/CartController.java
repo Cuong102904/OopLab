@@ -1,14 +1,21 @@
 package hust.soict.globalict.screen.customer.controller;
 
+import java.io.IOException;
+
 import hust.soict.globalict.aims.cart.Cart;
 import hust.soict.globalict.aims.disc.Playable;
 import hust.soict.globalict.aims.media.Media;
+import hust.soict.globalict.aims.store.Store;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -17,12 +24,15 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 public class CartController {
     private Cart cart;
+    private Store store;
 
-    public CartController(Cart cart) {
+    public CartController(Cart cart, Store store) {
         this.cart = cart;
+        this.store = store;
     }
 
     @FXML
@@ -144,8 +154,18 @@ public class CartController {
         }
     }
 
-    @FXML
     void btnViewStorePressed(ActionEvent event) {
-        // Add functionality for view store button
+        try {
+            final String STORE_FXML_FILE_PATH = "../view/Store.fxml";
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(STORE_FXML_FILE_PATH));
+            fxmlLoader.setController(new ViewStoreController(store, cart));
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Store");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

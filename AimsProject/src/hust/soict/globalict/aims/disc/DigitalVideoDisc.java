@@ -1,5 +1,7 @@
 package hust.soict.globalict.aims.disc;
 
+import hust.soict.globalict.aims.exception.PlayerException;
+
 public class DigitalVideoDisc extends Disc implements Playable {
 
     private String director;
