@@ -12,6 +12,7 @@ public class Painter extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Painter.fxml"));
+        loader.setController(new PainterController());
         BorderPane root = loader.load();
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
