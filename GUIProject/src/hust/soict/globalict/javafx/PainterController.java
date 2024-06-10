@@ -29,7 +29,7 @@ public class PainterController {
     @FXML
     void initialize() {
         // Initialize the default tool to pen and color to black
-        colorSelector.setValue(Color.BLACK);
+        // colorSelector.setValue(Color.BLACK);
         eraser.setFill(Color.WHITE);
         eraser.setStroke(Color.BLACK);
     }
@@ -60,7 +60,7 @@ public class PainterController {
             eraser.setX(event.getX() - 5);
             eraser.setY(event.getY() - 5);
         } else {
-            newLine.setStroke(colorSelector.getValue());
+            // newLine.setStroke(colorSelector.getValue());
             newLine.setStrokeWidth(2);
         }
         drawingAreaPane.getChildren().add(newLine);
